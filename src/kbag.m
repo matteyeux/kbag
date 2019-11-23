@@ -60,6 +60,7 @@ char *dump_kbag(char* pre, uint8_t* buf, size_t size)
 			sprintf(ret, "%s%02x", ret, buf[i]);
 
 	}
+
 	return (char *)ret;
 }
 
@@ -71,6 +72,7 @@ io_connect_t aes_accel()
 	io_service_t accel = IOIteratorNext(iterator);
 	io_connect_t connect = 0;
 	IOServiceOpen(accel, mach_task_self(), 0, &connect);
+
 	if (!connect) {
 		puts("couldn't connect to IOAESAccelerator! :(");
 		return (io_connect_t)-1;

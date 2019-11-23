@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <sys/socket.h>
-#include <resolv.h>
 #include <arpa/inet.h>
-#include <errno.h>
 #include <include/kbag.h>
 
 #define MY_PORT		12345
@@ -41,8 +39,8 @@ int server(void)
 	server.sin_addr.s_addr = INADDR_ANY;
 
 	if (bind(sockfd, (struct sockaddr*)&server, sizeof(server)) != 0) {
-		perror("socket--bind");
-		exit(errno);
+		perror("bind");
+		return -1;
 	}
 
 	listen(sockfd, 20);
@@ -66,3 +64,4 @@ int server(void)
 	close(sockfd);
 	return 0;
 }
+
