@@ -1,0 +1,9 @@
+Package: com.matteyeux.kbag
+Name: kbag
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: GID AES tool/server to grab keys from device. Based on qwertyoruiop's work
+Maintainer: matteyeux
+Author: matteyeux
+Section: System
+Tag: role::hacker
